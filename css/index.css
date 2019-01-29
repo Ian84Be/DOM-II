@@ -224,6 +224,23 @@ img {
   color: #212529;
   text-decoration: none;
 }
+div #typerband {
+  border: 10px solid red;
+  width: 80%;
+  padding: 10px;
+  border-top: 2px dashed #17A2B8;
+  background: black;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+div #typerband p {
+  border: 1px solid red;
+  color: black;
+  background: white;
+  line-height: 2rem;
+  font-size: 3rem;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;

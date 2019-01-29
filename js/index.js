@@ -33,5 +33,26 @@ pTags.forEach(el => {
     el.addEventListener('mouseout', ev => {
         el.style.color = 'black';
     })
-})
+});
+
+let typerTag = document.querySelector('#typerband');
+let typerText = document.querySelector('#typerband p');
+
+// PRESS ANY KEY, PRESS ALL OF THEM
+document.querySelector('body').addEventListener('keydown', ev => {
+    console.log(ev.code);
+    typerTag.setAttribute('style', 'display:flex;');
+    typerText.textContent += `${ev.key}`;
+});
+
+document.querySelector('body').addEventListener('keyup', ev => {
+    console.log(ev.code);
+    typerTag.setAttribute('style', 'display:none;');
+});
+
+
+
+
+
+
 
