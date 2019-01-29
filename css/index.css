@@ -136,6 +136,15 @@ html,
 body {
   font-family: 'Roboto', sans-serif;
 }
+@keyframes pulse {
+  0%,
+  100% {
+    background-color: #17A2B8;
+  }
+  50% {
+    background-color: #FFFFFF;
+  }
+}
 h1,
 h2,
 h3,

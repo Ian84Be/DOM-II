@@ -30,3 +30,15 @@
     color: @button-bg;
   }
 }
+
+.strobe(@color) {
+  // animation: pulse 1ms 10;
+  @keyframes pulse {
+    0%, 100% {
+      background-color: @color;
+    }
+    50% {
+      background-color: #FFFFFF;
+    }
+  }
+}
