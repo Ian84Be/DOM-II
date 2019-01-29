@@ -9,8 +9,9 @@ destinationButton.forEach(el => {
     })
 });
 
+// RAINBOW SCROLLER
 window.addEventListener('scroll', ev => {
-    document.querySelector('h1.logo-heading').style.color = getColor();
+    document.querySelector('.main-navigation').setAttribute('style', 'border-bottom: 2px dashed' + getColor());
 });
 
 // HEX CODE GENERATOR (student contribution from web16 video)
@@ -22,3 +23,15 @@ function getColor() {
     }
     return color;
 }
+
+// P TAG TEXT HI-LITE
+let pTags = document.querySelectorAll('p');
+pTags.forEach(el => {
+    el.addEventListener('mouseover', ev => {
+        el.style.color = 'red';
+    })
+    el.addEventListener('mouseout', ev => {
+        el.style.color = 'black';
+    })
+})
+
