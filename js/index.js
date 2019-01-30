@@ -5,7 +5,11 @@ destinationButton.forEach(el => {
         document.querySelector('body').style = 'animation: pulse 500ms infinite';
     });
     el.addEventListener('mouseup', ev => {
-        document.querySelector('body').style = 'animaion: null';
+        document.querySelector('body').style = 'animation: null';
+    })
+    el.addEventListener('dblclick', ev => {
+        console.log('dblBUBBLE');
+        ev.stopPropagation();
     })
 });
 
@@ -46,9 +50,47 @@ document.querySelector('body').addEventListener('keydown', ev => {
 });
 
 document.querySelector('body').addEventListener('keyup', ev => {
-    console.log(ev.code);
     typerTag.setAttribute('style', 'display:none;');
 });
+
+// taken from MDN
+window.addEventListener('blur', pause);
+window.addEventListener('focus', play);
+
+function pause() {
+    document.body.classList.add('paused');
+    console.log('FOCUS LOST!');
+}
+  
+function play() {
+    document.body.classList.remove('paused');
+    console.log('This document has focus.');
+}
+const all = document.querySelectorAll('*');
+
+// SEIZURE WARNING: dbl click anywhere if u dare
+window.addEventListener('dblclick', ev => {
+    
+    all.forEach(el => {
+        el.style = 'animation: pulse 50ms infinite';
+    });
+});
+
+// SEIZURE ANTIDOTE: CLICK IMG
+document.querySelectorAll('img').forEach(el => {
+    el.addEventListener('click', ev => {
+        all.forEach(el => {
+            el.style.background = '';
+            el.style.animation = '';
+        });
+    });
+});
+
+document.querySelectorAll('a').forEach(el => {
+    el.addEventListener('click', ev => ev.preventDefault());
+})
+
+
 
 
 
